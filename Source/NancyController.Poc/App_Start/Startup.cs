@@ -2,7 +2,6 @@
 using System.Net;
 using Microsoft.Owin;
 using Microsoft.Owin.Hosting;
-using Nancy;
 using NancyController.Poc;
 using Owin;
 

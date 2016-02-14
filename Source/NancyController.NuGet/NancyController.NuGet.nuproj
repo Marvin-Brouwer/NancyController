@@ -21,14 +21,13 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>NancyController</Id>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Title>NancyController</Title>
     <Authors>Marvin Brouwer</Authors>
     <Owners>Marvin Brouwer</Owners>
     <Summary>Using Nancy the way you're used to in Mvc.Net</Summary>
     <Description>This library provides a NancControllerModule, this creates a Nancy Module which binds methods to routes similar to the way it looks and feels in Mvc.Net.</Description>
-    <ReleaseNotes>
-    </ReleaseNotes>
+    <ReleaseNotes>Fixed Path resolving for modules and added exlusion list for method resolving</ReleaseNotes>
     <ProjectUrl>https://github.com/Marvin-Brouwer/NancyController</ProjectUrl>
     <LicenseUrl>https://github.com/Marvin-Brouwer/NancyController/blob/master/License.md</LicenseUrl>
     <Copyright>Copyright © Marvin Brouwer</Copyright>

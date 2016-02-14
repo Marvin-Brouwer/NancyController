@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 using Nancy;
-using Nancy.Extensions;
 using Nancy.Responses.Negotiation;
 
 namespace NancyController
@@ -14,18 +14,31 @@ namespace NancyController
     /// </summary>
     public abstract class NancyControllerModule : NancyModule
     {
+        protected List<Type> ExcludeTypesFromsResolving = new List<Type>()
+        {
+            { typeof(NancyModule) },
+            { typeof(NancyControllerModule) },
+        };
         /// <summary>
         /// A NancyController Creates a Nancy module but looks like an Mvc.Net controller
         /// </summary>
         protected NancyControllerModule() : base()
         {
+            ModulePath = GetType()
+                .Name.Substring(0, GetType().Name.LastIndexOf("module", StringComparison.OrdinalIgnoreCase));
+            if (ModulePath.Equals("home", StringComparison.OrdinalIgnoreCase))
+            {
+                ModulePath = "/";
+                // todo: find a way out to use '/' and '/Home'
+            }
+
             Initialize();
         }
         /// <summary>
         /// A NancyController Creates a Nancy module but looks like an Mvc.Net controller
         /// </summary>
         /// <param name="modulePath">Override the modulePath, usually this is resolved by the controllerName</param>
-        protected NancyControllerModule(string modulePath) : base(modulePath)
+        protected  NancyControllerModule(string modulePath) : base(modulePath)
         {
             Initialize();
         }
@@ -33,7 +46,7 @@ namespace NancyController
         /// <summary>
         /// Iterate through all the method's returning any type of Nancy Response
         /// </summary>
-        private void Initialize()
+        protected virtual void Initialize()
         {
             // Did you really mean to prohibit public methods? I assume not
             var methods = GetType().GetMethods(
@@ -41,7 +54,7 @@ namespace NancyController
                 BindingFlags.Public |
                 BindingFlags.Instance);
             var retMethods = methods
-                .Where(m => m.DeclaringType != typeof(NancyControllerModule))
+                .Where(m => ExcludeTypesFromsResolving.Any(etr => m.DeclaringType != etr))
                 .Where(m =>
                     typeof(Response).IsAssignableFrom(m.ReturnType) ||
                     typeof(Negotiator).IsAssignableFrom(m.ReturnType)
