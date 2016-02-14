@@ -6,7 +6,7 @@ This library provides a NancControllerModule, this creates a Nancy Module which 
 similar to the way it looks and feels in Mvc.Net.
 
 ## Installation
-Install ge nuget Package: [NancyController](https://www.nuget.org/packages/NancyController/)
+Install the nuget Package: [NancyController](https://www.nuget.org/packages/NancyController/)  
 `PM > Install-Package NancyController`
 
 ## Usage
