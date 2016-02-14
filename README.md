@@ -10,7 +10,7 @@ Install ge nuget Package: [NancyController](https://www.nuget.org/packages/Nancy
 `PM > Install-Package NancyController`
 
 ## Usage
-The usage is very similar to the normal way, if you'd like to see an example you can check it out here: [/Source/POC.MVC](https://github.com/Marvin-Brouwer/CodedViews/tree/master/Source/POC.MVC).
+The usage is very similar to the normal way, if you'd like to see an example you can check it out here: [/Source/NancyController.Poc](https://github.com/Marvin-Brouwer/CodedViews/tree/master/Source/NancyController.Poc).
 
 	public sealed class HomeModule : NancyControllerModule
     {
