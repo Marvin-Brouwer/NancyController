@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{960C89BB-A85D-4529-B9EF-68A5BFDB165B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		License.md = License.md
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "POC", "POC", "{FB8260E8-8C44-4777-ACE3-6AAEFA1742B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{8BD6A9F3-28F3-4566-BCF8-4596914DFF5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NancyController", "Source\NancyController\NancyController.csproj", "{B697F6C3-3847-4BB4-85CD-C2989DF0E962}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NancyController.Poc", "Source\NancyController.Poc\NancyController.Poc.csproj", "{D3053667-401D-487D-BA04-8A1810EC0B4E}"
+EndProject
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "NancyController.NuGet", "Source\NancyController.NuGet\NancyController.NuGet.nuproj", "{42E71E3C-0963-4289-AE7F-3070B7553802}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B697F6C3-3847-4BB4-85CD-C2989DF0E962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B697F6C3-3847-4BB4-85CD-C2989DF0E962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B697F6C3-3847-4BB4-85CD-C2989DF0E962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B697F6C3-3847-4BB4-85CD-C2989DF0E962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3053667-401D-487D-BA04-8A1810EC0B4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3053667-401D-487D-BA04-8A1810EC0B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3053667-401D-487D-BA04-8A1810EC0B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3053667-401D-487D-BA04-8A1810EC0B4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42E71E3C-0963-4289-AE7F-3070B7553802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42E71E3C-0963-4289-AE7F-3070B7553802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42E71E3C-0963-4289-AE7F-3070B7553802}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{42E71E3C-0963-4289-AE7F-3070B7553802}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D3053667-401D-487D-BA04-8A1810EC0B4E} = {FB8260E8-8C44-4777-ACE3-6AAEFA1742B3}
+		{42E71E3C-0963-4289-AE7F-3070B7553802} = {8BD6A9F3-28F3-4566-BCF8-4596914DFF5A}
+	EndGlobalSection
+EndGlobal

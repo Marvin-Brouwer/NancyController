@@ -1,0 +1,15 @@
+﻿@model NancyController.Poc.Models.ExampleViewModel
+
+@{
+    Layout = "Shared/Layout/SiteLayout.cshtml";
+}
+
+<h2>Post Example</h2>
+
+<p>@Model.Title</p>
+<ul>
+    @foreach (var value in @Model.Iteration)
+    {
+        <li>@value</li>
+    }
+</ul>

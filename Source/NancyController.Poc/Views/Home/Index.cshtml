@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "Shared/Layout/SiteLayout.cshtml";
+}
+
+<h2>Home Page</h2>
+
+<form method="Post" action="/Post" id="exampleForm">
+    <input type="text" name="title" id="titleInput"/>
+    <input type="submit"/>
+</form>
+
+<h3>Result</h3>
+<div id="resultDiv"></div>
+
+<script>
+    window.onload = function() {
+        var form = document.getElementById("exampleForm");
+        var titleInput = document.getElementById("titleInput");
+        var resultDiv = document.getElementById("resultDiv");
+
+        function callAjax(url, callback) {
+            // compatible with IE7+, Firefox, Chrome, Opera, Safari
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                    callback(xmlhttp.responseText);
+                }
+            }
+            xmlhttp.open("POST", url, true);
+            xmlhttp.send();
+        }
+
+        form.onsubmit = function (ev) {
+            ev.preventDefault();
+            callAjax(form.action + "/" + titleInput.value, function(response) {
+                resultDiv.innerHTML = response;
+            });
+        }
+    }
+</script>

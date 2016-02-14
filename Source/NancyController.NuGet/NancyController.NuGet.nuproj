@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="NuPack|AnyCPU">
+      <Configuration>NuPack</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NancyController\NancyController.csproj" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>42e71e3c-0963-4289-ae7f-3070b7553802</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NuProjPath Condition=" '$(NuProjPath)' == '' ">$(MSBuildExtensionsPath)\NuProj\</NuProjPath>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
+  <PropertyGroup Label="Configuration">
+    <Id>NancyController</Id>
+    <Version>1.0.0</Version>
+    <Title>NancyController</Title>
+    <Authors>Marvin Brouwer</Authors>
+    <Owners>Marvin Brouwer</Owners>
+    <Summary>Using Nancy the way you're used to in Mvc.Net</Summary>
+    <Description>This library provides a NancControllerModule, this creates a Nancy Module which binds methods to routes similar to the way it looks and feels in Mvc.Net.</Description>
+    <ReleaseNotes>
+    </ReleaseNotes>
+    <ProjectUrl>https://github.com/Marvin-Brouwer/NancyController</ProjectUrl>
+    <LicenseUrl>https://github.com/Marvin-Brouwer/NancyController/blob/master/License.md</LicenseUrl>
+    <Copyright>Copyright © Marvin Brouwer</Copyright>
+    <Tags>Nancy Controller Mvc.Net</Tags>
+    <GenerateSymbolPackage>true</GenerateSymbolPackage>
+    <EmbedSourceFiles>false</EmbedSourceFiles>
+    <NoPackageAnalysis>false</NoPackageAnalysis>
+    <DevelopmentDependency>false</DevelopmentDependency>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.targets" />
+</Project>
